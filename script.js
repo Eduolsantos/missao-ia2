@@ -148,13 +148,13 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-  caixaPergunta.textContent = "Você escolheu seu caminho...";
+  caixaPergunta.textContent = "Gostou do seu futuro? Que tal tentar outro?";
   textoResultado.textContent = historiaFinal;
   caixaAlternativa.textContent = "";
 
   // Cria o botão de reiniciar
   const botaoReiniciar = document.createElement("button");
-  botaoReiniciar.textContent = "Reiniciar";
+  botaoReiniciar.textContent = "Mudar o meu destino";
   botaoReiniciar.onclick = reiniciarQuiz;
   caixaAlternativa.appendChild(botaoReiniciar);
 }
@@ -166,4 +166,20 @@ function reiniciarQuiz() {
   mostrarPergunta();
 }
 
-mostrarPergunta();
+const botaoIniciar = document.createElement("button");
+botaoIniciar.textContent = "Iniciar";
+botaoIniciar.className = "botao-iniciar";
+botaoIniciar.onclick = iniciarQuiz;
+caixaPrincipal.appendChild(botaoIniciar);
+
+caixaPergunta.style.display = "none";
+caixaAlternativa.style.display = "none";
+textoResultado.style.display = "none";
+
+function iniciarQuiz() {
+  botaoIniciar.style.display = "none";
+  caixaPergunta.style.display = "";
+  caixaAlternativa.style.display = "";
+  textoResultado.style.display = "";
+  mostrarPergunta();
+}
