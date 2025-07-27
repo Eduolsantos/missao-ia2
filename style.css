@@ -42,3 +42,9 @@ button:hover {
     background-color: var(--cor-destaque);
     color: var(--cor-principal);
 }
+
+button:active {
+    background-color:red;
+    color: pink;
+    transition: 0.15s  ;
+}
